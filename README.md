@@ -1,5 +1,13 @@
 # AngularExam
 
+
+
+npm install -g @angular/cli
+
+npm install
+json-server --watch db.json
+
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.12.
 
 ## Development server
