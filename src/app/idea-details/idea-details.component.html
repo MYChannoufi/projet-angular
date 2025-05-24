@@ -1,0 +1,39 @@
+<div class="container">
+  <div *ngIf="loading" class="loading">
+    Chargement des détails...
+  </div>
+
+  <div *ngIf="error" class="error">
+    {{ error }}
+  </div>
+
+  <div *ngIf="!loading && !error && idea" class="idea-details">
+    <h2>{{ idea.title }}</h2>
+    
+    <div class="description">
+      <h3>Description</h3>
+      <p>{{ idea.description }}</p>
+    </div>
+
+    <div class="meta">
+      <div class="date">
+        <strong>Date:</strong> {{ idea.date }}
+      </div>
+      <div class="likes">
+        <strong>Likes:</strong> {{ idea.likes }}
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-like" (click)="likeIdea()">
+        J'aime
+      </button>
+      <button class="btn btn-delete" (click)="deleteIdea()">
+        Supprimer
+      </button>
+      <button class="btn btn-back" (click)="goBack()">
+        Retour
+      </button>
+    </div>
+  </div>
+</div>

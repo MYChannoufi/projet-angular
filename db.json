@@ -1,0 +1,25 @@
+{
+  "ideas": [
+    {
+      "id": "2",
+      "title": "Plateforme 2",
+      "description": "desc",
+      "date": "2024-03-19",
+      "likes": 25
+    },
+    {
+      "id": "3",
+      "title": "Application 3",
+      "description": "desc",
+      "date": "2024-03-18",
+      "likes": 42
+    },
+    {
+      "id": 0,
+      "title": "test",
+      "description": "pppppppppppppppp",
+      "date": "2025-05-24",
+      "likes": 0
+    }
+  ]
+}

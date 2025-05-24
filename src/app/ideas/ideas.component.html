@@ -1,0 +1,51 @@
+<div class="container">
+  <h2>Boîte à Idées</h2>
+  
+  <div *ngIf="loading" class="loading">
+    Chargement des idées...
+  </div>
+
+  <div *ngIf="error" class="error">
+    {{ error }}
+  </div>
+
+  <div *ngIf="!loading && !error" class="ideas-list">
+    <div *ngIf="ideas.length === 0" class="no-ideas">
+      Aucune idée disponible.
+    </div>
+
+    <div *ngFor="let idea of ideas" class="idea-card">
+      <h3>{{ idea.title }}</h3>
+      <p>{{ idea.description }}</p>
+      <div class="idea-footer">
+        <span class="date">Date: {{ idea.date }}</span>
+        <div class="actions">
+          <button class="btn btn-like" (click)="likeIdea(idea)">
+            Likes: {{ idea.likes }}
+          </button>
+          <button class="btn btn-detail" (click)="viewDetails(idea.id)">
+            Détail
+          </button>
+          <button class="btn btn-delete" (click)="deleteIdea(idea.id)">
+            Supprimer
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="statistics" *ngIf="ideas.length > 0">
+      <div class="stat-card">
+        <h3>Statistiques</h3>
+        <div class="stat-item">
+          <span class="stat-label">Nombre total d'idées :</span>
+          <span class="stat-value">{{ getTotalIdeas() }}</span>
+        </div>
+        <div class="stat-item" *ngIf="getMostLikedIdea()">
+          <span class="stat-label">Idée la plus populaire :</span>
+          <span class="stat-value">{{ getMostLikedIdea()?.title }}</span>
+          <span class="likes-count">({{ getMostLikedIdea()?.likes }} likes)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
